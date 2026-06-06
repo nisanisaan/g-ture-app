@@ -1,0 +1,141 @@
+/* ==========================================================================
+   FULL CSS REFACTOR - G-TURE PREMIUM LUXURY THEME (HIGH CONTRAST)
+   ========================================================================== */
+
+/* 1. Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* 2. Latar Belakang Aplikasi (Radial Gradient Lembut) */
+.stApp {
+    background: radial-gradient(circle at center, #FEE39F 0%, #FBF5D2 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Lebar Kontainer Aplikasi (Simetris 720px) */
+.block-container {
+    max-width: 720px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* 3. Aturan Tipografi Global (Teks Utama Cokelat Gelap) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif !important;
+    color: #441004 !important;
+    font-weight: 700 !important;
+}
+
+p, label, .stMarkdown p {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #441004 !important; 
+}
+
+/* Perbaikan Khusus Judul Besar "The Future of Gold" / "Masa Depan Emas" */
+h1 {
+    font-size: 42px !important;
+    text-align: center !important;
+    letter-spacing: 2px !important;
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+}
+
+/* 4. Widget Labels (Nama Input Form Atas) */
+div[data-testid="stWidgetLabel"] p, 
+label[data-baseweb="radio"] div {
+    color: #441004 !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase;
+}
+
+/* 5. Kotak Input Tanggal (Putih Bersih Kontras Tinggi) */
+div[data-baseweb="base-input"], 
+div[data-baseweb="input"] > div,
+input[type="text"], 
+div[data-baseweb="datepicker"] {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AD6D15 !important;
+    border-radius: 6px !important;
+    color: #441004 !important;
+    font-weight: 600 !important;
+}
+
+/* 6. Selektor Menu Pilihan Bahasa & Radio Button (Bentuk Kapsul Putih) */
+div[data-testid="stRadio"] > div[role="radiogroup"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    background: #FFFFFF !important;
+    border-radius: 50px !important;
+    padding: 5px 15px !important;
+    border: 2px solid #AD6D15 !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+}
+
+/* ==========================================================================
+   7. SEKTOR TOMBOL UTAMA (MEMAKSA TULISAN MENYALA TEGAS & EMAS CERAH)
+   ========================================================================== */
+div.stButton > button {
+    background-color: #441004 !important; /* Warna dasar tombol cokelat pekat */
+    border: 2px solid #AD6D15 !important;  /* Bingkai emas tegas Gobre */
+    border-radius: 8px !important;
+    width: 100% !important;                /* Melebar penuh agar rapi */
+    padding: 14px 24px !important;
+    box-shadow: 0 4px 15px rgba(68, 16, 4, 0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Membidik text/span bawaan Streamlit di dalam tombol agar berwarna emas terang */
+div.stButton > button p, 
+div.stButton > button span, 
+div.stButton > button div {
+    color: #FBF5D2 !important;            /* KREASI UTAMA: Emas terang (Pasti Kelihatan!) */
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;           /* SANGAT TEBAL / BOLD */
+    font-size: 15px !important;           /* Ukuran huruf diperjelas */
+    text-transform: uppercase !important;  /* Kapital semua */
+    letter-spacing: 2px !important;
+}
+
+/* Efek Interaktif Saat Kursor Menyorot Tombol (Hover) */
+div.stButton > button:hover {
+    background-color: #79380B !important; /* Berubah ke warna bronze anggun */
+    box-shadow: 0 6px 20px rgba(68, 16, 4, 0.35) !important;
+}
+div.stButton > button:hover span,
+div.stButton > button:hover p {
+    color: #FFFFFF !important;            /* Teks berubah jadi putih bersih saat ditunjuk */
+    letter-spacing: 3px !important;       /* Efek meregang elegan */
+}
+
+/* ==========================================================================
+   8. STRUKTUR KOTAK CONTAINER & CARDS (ANTI-BOCOR)
+   ========================================================================== */
+/* Kotak Pembungkus Logo Atas (Wajib Putih Solid agar SVG Terkunci Sempurna) */
+.luxury-card {
+    background-color: #FFFFFF !important;
+    border: 2px solid #AD6D15 !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 6px 15px rgba(68, 16, 4, 0.05) !important;
+    margin-bottom: 2rem !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+/* Kotak Hasil Nominal Harga di Bawah */
+.valuation-card {
+    background-color: #FFFFFF !important;
+    border: 2px solid #EFBB55 !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 8px 24px rgba(68, 16, 4, 0.08) !important;
+    text-align: center !important;
+    margin-top: 20px !important; 
+    margin-bottom: 30px !important;
+}
+
+/* Menyembunyikan aksesoris bawaan/garis merah atas Streamlit */
+#MainMenu, footer, header { visibility: hidden !important; }
