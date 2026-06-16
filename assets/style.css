@@ -1,24 +1,37 @@
 /* ==========================================================================
    FULL CSS REFACTOR - G-TURE PREMIUM LUXURY THEME (HIGH CONTRAST)
+   Pemisahan gaya visual ke dalam file CSS eksternal ini adalah bukti 
+   penerapan prinsip "Separation of Concerns" (memisahkan logika dari tampilan).
    ========================================================================== */
 
-/* 1. Import Premium Fonts */
+/* ==========================================================================
+   1. TIPOGRAFI & FONT EKSTERNAL
+   Mengimpor font dari Google Fonts (Cormorant Garamond & Montserrat) untuk 
+   memberikan nuansa "Luxury Brand" yang elegan dan klasik pada aplikasi.
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* 2. Latar Belakang Aplikasi (Radial Gradient Lembut) */
+/* ==========================================================================
+   2. LATAR BELAKANG & TATA LETAK GLOBAL
+   Mengatur palet warna dasar aplikasi menggunakan gradasi radial yang statis 
+   (fixed) dan membatasi lebar kontainer agar desain tetap simetris di layar.
+   ========================================================================== */
 .stApp {
     background: radial-gradient(circle at center, #FEE39F 0%, #FBF5D2 100%) !important;
     background-attachment: fixed !important;
 }
 
-/* Lebar Kontainer Aplikasi (Simetris 720px) */
 .block-container {
     max-width: 720px !important;
     padding-top: 2rem !important;
     padding-bottom: 3rem !important;
 }
 
-/* 3. Aturan Tipografi Global (Teks Utama Cokelat Gelap) */
+/* ==========================================================================
+   3. ATURAN TIPOGRAFI GLOBAL
+   Menerapkan hierarki visual yang jelas. Heading menggunakan font serif, 
+   sedangkan teks paragraf menggunakan sans-serif agar mudah dibaca.
+   ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif !important;
     color: #441004 !important;
@@ -30,7 +43,7 @@ p, label, .stMarkdown p {
     color: #441004 !important; 
 }
 
-/* Perbaikan Khusus Judul Besar "The Future of Gold" / "Masa Depan Emas" */
+/* Penyesuaian spesifik untuk Judul Besar Utama (Hero Title) */
 h1 {
     font-size: 42px !important;
     text-align: center !important;
@@ -39,7 +52,12 @@ h1 {
     margin-bottom: 0px !important;
 }
 
-/* 4. Widget Labels (Nama Input Form Atas) */
+/* ==========================================================================
+   4. KUSTOMISASI KOMPONEN INPUT (FORM & WIDGET)
+   Menimpa (override) gaya bawaan Streamlit pada elemen interaktif pengguna 
+   agar konsisten dengan tema high-contrast aplikasi.
+   ========================================================================== */
+/* Kustomisasi Label Form */
 div[data-testid="stWidgetLabel"] p, 
 label[data-baseweb="radio"] div {
     color: #441004 !important;
@@ -49,7 +67,7 @@ label[data-baseweb="radio"] div {
     text-transform: uppercase;
 }
 
-/* 5. Kotak Input Tanggal (Putih Bersih Kontras Tinggi) */
+/* Kustomisasi Kotak Input Tanggal (Date Picker) */
 div[data-baseweb="base-input"], 
 div[data-baseweb="input"] > div,
 input[type="text"], 
@@ -61,7 +79,7 @@ div[data-baseweb="datepicker"] {
     font-weight: 600 !important;
 }
 
-/* 6. Selektor Menu Pilihan Bahasa & Radio Button (Bentuk Kapsul Putih) */
+/* Kustomisasi Selektor Pilihan Bahasa (Language Capsule) */
 div[data-testid="stRadio"] > div[role="radiogroup"] {
     display: flex !important;
     flex-direction: row !important;
@@ -75,45 +93,50 @@ div[data-testid="stRadio"] > div[role="radiogroup"] {
 }
 
 /* ==========================================================================
-   7. SEKTOR TOMBOL UTAMA (MEMAKSA TULISAN MENYALA TEGAS & EMAS CERAH)
+   5. SEKTOR TOMBOL UTAMA (CALL-TO-ACTION / CTA)
+   Meningkatkan interaktivitas tombol utama agar lebih menarik perhatian.
+   Dilengkapi dengan efek transisi warna saat disorot kursor (Hover State).
    ========================================================================== */
+/* Kondisi Normal Tombol */
 div.stButton > button {
-    background-color: #441004 !important; /* Warna dasar tombol cokelat pekat */
-    border: 2px solid #AD6D15 !important;  /* Bingkai emas tegas Gobre */
+    background-color: #441004 !important; 
+    border: 2px solid #AD6D15 !important;  
     border-radius: 8px !important;
-    width: 100% !important;                /* Melebar penuh agar rapi */
+    width: 100% !important;                
     padding: 14px 24px !important;
     box-shadow: 0 4px 15px rgba(68, 16, 4, 0.25) !important;
     transition: all 0.3s ease !important;
 }
 
-/* Membidik text/span bawaan Streamlit di dalam tombol agar berwarna emas terang */
+/* Tipografi di dalam Tombol Utama */
 div.stButton > button p, 
 div.stButton > button span, 
 div.stButton > button div {
-    color: #FBF5D2 !important;            /* KREASI UTAMA: Emas terang (Pasti Kelihatan!) */
+    color: #FBF5D2 !important;            
     font-family: 'Montserrat', sans-serif !important;
-    font-weight: 700 !important;           /* SANGAT TEBAL / BOLD */
-    font-size: 15px !important;           /* Ukuran huruf diperjelas */
-    text-transform: uppercase !important;  /* Kapital semua */
+    font-weight: 700 !important;           
+    font-size: 15px !important;           
+    text-transform: uppercase !important;  
     letter-spacing: 2px !important;
 }
 
-/* Efek Interaktif Saat Kursor Menyorot Tombol (Hover) */
+/* Efek Interaktif (Hover State) */
 div.stButton > button:hover {
-    background-color: #79380B !important; /* Berubah ke warna bronze anggun */
+    background-color: #79380B !important; 
     box-shadow: 0 6px 20px rgba(68, 16, 4, 0.35) !important;
 }
 div.stButton > button:hover span,
 div.stButton > button:hover p {
-    color: #FFFFFF !important;            /* Teks berubah jadi putih bersih saat ditunjuk */
-    letter-spacing: 3px !important;       /* Efek meregang elegan */
+    color: #FFFFFF !important;            
+    letter-spacing: 3px !important;       
 }
 
 /* ==========================================================================
-   8. STRUKTUR KOTAK CONTAINER & CARDS (ANTI-BOCOR)
+   6. STRUKTUR KARTU (UI CARDS) & ELEMEN BAWAAN
+   Membungkus hasil kalkulasi ke dalam kotak visual yang menonjol, sekaligus
+   menyembunyikan elemen default Streamlit agar aplikasi tampak seperti web murni.
    ========================================================================== */
-/* Kotak Pembungkus Logo Atas (Wajib Putih Solid agar SVG Terkunci Sempurna) */
+/* Kotak Pembungkus Logo Atas */
 .luxury-card {
     background-color: #FFFFFF !important;
     border: 2px solid #AD6D15 !important;
@@ -125,7 +148,7 @@ div.stButton > button:hover p {
     text-align: center !important;
 }
 
-/* Kotak Hasil Nominal Harga di Bawah */
+/* Kotak Fokus Hasil Nominal Prediksi */
 .valuation-card {
     background-color: #FFFFFF !important;
     border: 2px solid #EFBB55 !important;
@@ -137,5 +160,5 @@ div.stButton > button:hover p {
     margin-bottom: 30px !important;
 }
 
-/* Menyembunyikan aksesoris bawaan/garis merah atas Streamlit */
+/* Menyembunyikan Toolbar Bawaan Streamlit (Header, Footer, Menu) */
 #MainMenu, footer, header { visibility: hidden !important; }
