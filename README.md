@@ -1,8 +1,10 @@
-G-TURE: Gold Future Prediction System ⚜️
+# G-TURE: Gold Future Prediction System ⚜️
 
-G-TURE adalah aplikasi berbasis Data Science yang dirancang untuk melakukan prediksi harga emas menggunakan model Machine Learning. Aplikasi ini menyediakan visualisasi data interaktif, dukungan bilingual (Indonesia & Inggris), serta antarmuka modern yang memudahkan pengguna dalam memahami tren harga emas.
+G-TURE adalah aplikasi berbasis **Data Science** yang dirancang untuk melakukan prediksi harga emas menggunakan model **Machine Learning**. Aplikasi ini menyediakan visualisasi data interaktif, dukungan bilingual (Indonesia & Inggris), serta antarmuka modern yang memudahkan pengguna dalam memahami tren harga emas.
 
-📂 Struktur Proyek
+## 📂 Struktur Proyek
+
+```plaintext
 g-ture-app/
 │
 ├── assets/
@@ -18,11 +20,12 @@ g-ture-app/
 │
 ├── app.py                  # File utama aplikasi Streamlit
 └── requirements.txt        # Daftar dependensi proyek
+```
 
+## 🚀 Teknologi
 
-🚀 Teknologi:
-Python
-Streamlit
-Plotly
-Pandas
-Scikit-Learn
+- Python
+- Streamlit
+- Plotly
+- Pandas
+- Scikit-Learn
